@@ -7,7 +7,7 @@ from urllib import parse
 from discord.ext import commands
 
 client = discord.Client()
-bot = commands.Bot(comment_prefix="!") #접두사를 !로 
+bot = commands.Bot(commend_prefix='!')
 
 # 디스코드에서 생성된 토큰을 여기에 추가
 token = os.environ["BOT_TOKEN"]
