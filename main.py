@@ -4,7 +4,7 @@ import os
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from urllib import parse
-form discord.ext import commands
+from discord.ext import commands
 
 client = discord.Client()
 bot = commands.Bot(comment_prefix="!") #접두사를 !로 
