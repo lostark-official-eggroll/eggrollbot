@@ -63,7 +63,7 @@ async def link(ctx, Id, user: discord.Member = None) -> None:
     #이미 크롤러에서 원정대 내 캐릭터 정보를 아이템 레벨순으로 정렬하였습니다. 
     #call_data의 첫 인덱스의 값을 받아 대표 캐릭터 정보로 사용합니다.
     name, cl, lv = call_data[0][1:]
-    role_name = #길드 규칙 및 디스코드 역할에 맡게 지정
+    role_name = "길드원"#길드 규칙 및 디스코드 역할에 맡게 지정
     role = discord.utils.get(ctx.guild.roles, name=role_name)
     
     
