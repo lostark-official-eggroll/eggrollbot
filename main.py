@@ -4,8 +4,10 @@ import os
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from urllib import parse
+form discord.ext import commands
 
 client = discord.Client()
+bot = commands.Bot(comment_prefix="!") #접두사를 !로 
 
 # 디스코드에서 생성된 토큰을 여기에 추가
 token = os.environ["BOT_TOKEN"]
@@ -42,7 +44,7 @@ async def on_message(message):
         await channel.send("<@"+str(message.author.id)+"> : 레벨\""+message.content[1:]+"\""+str(tmpContent))
 
 # 디스코드 id와 계정 연동
-@client.command(name='계정연동')
+@bot.command(name='계정연동')
 async def link(ctx, Id, user: discord.Member = None) -> None:
 	#디스코드 서버의 관리자는 타인의 계정을 그 사람의 디스코드 계정에 연동해주는 기능도 있으면 편리할 것입니다. 
     #코드의 첫 if else 구문들은 이를 구분하기 위해 쓰였습니다.
@@ -94,3 +96,4 @@ async def link(ctx, Id, user: discord.Member = None) -> None:
     await ctx.send(f'{nick_ or ctx.author.nick} 님의 계정 연동 사항입니다.\n')
     await ctx.send(embed=embed_print(call_data))
 client.run(token)
+bot.run(token)
